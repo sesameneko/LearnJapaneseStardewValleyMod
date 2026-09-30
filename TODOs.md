@@ -37,7 +37,6 @@
     - [ ] Event questions (`question`, `quickQuestion`)
     - [x] Icon and bubble
     - [ ] Code-built strings
-  - [ ] [Explanatory translation mode](#explanatory-translation-mode)
 
 ## Details
 
@@ -173,14 +172,6 @@ Still to do:
 4. `$d`, `$p` and `$query` pages (45 entries) aren't mapped: those commands swap in text from inside their own segment. They fall back to the whole entry, which leaves out the command segments, so the icon can be missing on them.
 
 Open: what a click on the icon should do, if anything (freezing the bubble, like `Z`, is the obvious candidate), and whether a held button should show the bubble for controller players. `textAboveHead` has no box, so it's out of scope.
-
-### Explanatory translation mode
-
-A second translation mode: offline, AI-generated semi-literal translations shown instead of the game's official English. Not built. The data format is defined in the stub `assets/translations/explanatory/ja.json`: entries keyed by a hash of the source string, each holding `original`, `literal` (a word-for-word gloss) and `natural`. Plan:
-
-- Load it alongside `TranslationIndex`, keyed by the original string, so both modes share one lookup path.
-- Add a config option or keybind to switch which mode is shown, falling back to the literal translation when there's no explanatory entry.
-- Generating the data is out of scope. It's produced elsewhere and dropped into `assets/`.
 
 ## The pipeline
 
