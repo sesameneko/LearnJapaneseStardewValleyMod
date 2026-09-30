@@ -5,7 +5,7 @@
   "Description": "A study-aid for learning Japanese by playing SDV!",
   "UniqueID": "com.oldclovercat.jplanguagestudy",
   "EntryDll": "LanguageStudyStardewValleyMod.dll",
-  "MinimumApiVersion": "3.0.0",
+  "MinimumApiVersion": "4.0.0",
   "UpdateKeys": [ "Nexus:53117" ],
   "StudyLanguage": "ja"
 }
