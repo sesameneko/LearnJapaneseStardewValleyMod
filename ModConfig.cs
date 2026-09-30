@@ -6,17 +6,16 @@ namespace LanguageStudyStardewValleyMod
     {
         public bool TranslationEnabled { get; set; } = true;
 
-        // letter keys rather than function keys: on macOS F-keys need Fn by default.
-        // Both are unbound in vanilla (which reserves WASD/C/X/V/Y/F/M/E/T/Tab/Escape/1-0) and
-        // avoid keys popular mods claim (F1 Lookup Anything, B Chests Anywhere, P CJB Cheats,
-        // I Item Spawner, U Automate). Left-hand keys, since the right hand is on the mouse.
-        public KeybindList ToggleTranslation { get; set; } = KeybindList.Parse("G");
+        // unbound by default; players bind them in GMCM or config.json. Avoid function keys as
+        // defaults: on macOS they need Fn.
+        public KeybindList ToggleTranslation { get; set; } = new();
 
         /// <summary>Locks the tooltip under the cursor on/off so individual words in it can be hovered.</summary>
-        public KeybindList FreezeTooltip { get; set; } = KeybindList.Parse("Z");
+        public KeybindList FreezeTooltip { get; set; } = new();
 
         /// <summary>Pins the tooltip under the cursor only for as long as this is held down.</summary>
-        public KeybindList HoldFreezeTooltip { get; set; } = KeybindList.Parse("RightShift");
+        /// <remarks>Left-hand, since the right hand is on the mouse; Left Shift is vanilla's Run.</remarks>
+        public KeybindList HoldFreezeTooltip { get; set; } = KeybindList.Parse("LeftAlt");
 
         /// <summary>
         /// Whether left-clicking a hovered word saves it as a flashcard. The click is

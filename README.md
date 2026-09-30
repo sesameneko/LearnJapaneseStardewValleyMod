@@ -37,13 +37,13 @@ The build finds your game folder and copies the mod into `Mods` automatically.
 
 | Action | Key |
 |---|---|
-| Toggle translation on/off | `G` |
-| Lock / unlock the tooltip under the cursor | `Z` |
-| Freeze the tooltip while held | `Right Shift` |
+| Toggle translation on/off | unbound |
+| Lock / unlock the tooltip under the cursor | unbound |
+| Freeze the tooltip while held | `Left Alt` (`Option` on Mac) |
 | Save a hovered word as a flashcard | Left-click |
 | Flashcard review: flip / missed / knew it | `Space` / `1` / `2` |
 
-You can rebind all of these, and turn off click-to-save, in Generic Mod Config Menu or in the mod's `config.json`.
+You can bind or rebind all of these, and turn off click-to-save, in Generic Mod Config Menu or in the mod's `config.json`.
 
 ## Contributing & reporting issues
 

@@ -78,7 +78,7 @@ The Japanese clock isn't in any string table. `DayTimeMoneyBox.draw` builds it i
 
 ## Frozen tooltips
 
-A frozen tooltip stays where it is with its content fixed, so the cursor can move across it and hover the words inside. `Z` locks and unlocks one, and holding `Right Shift` pins one until the key is released (`ModConfig.FreezeTooltip` / `HoldFreezeTooltip`). `FrozenTooltip.cs` holds the state, and `TooltipReissue.cs` draws it. Two facts about the game, from the 1.6.15 IL, make this possible:
+A frozen tooltip stays where it is with its content fixed, so the cursor can move across it and hover the words inside. Holding `Left Alt` pins one until the key is released, and a lock key (unbound by default) locks and unlocks one (`ModConfig.FreezeTooltip` / `HoldFreezeTooltip`). `FrozenTooltip.cs` holds the state, and `TooltipReissue.cs` draws it. Two facts about the game, from the 1.6.15 IL, make this possible:
 
 - **Hover is polled, and nothing marks it handled.** `Game1.updateActiveMenu` calls the menu's `performHoverAction` every frame, and nested menus forward it by hand. Neither it nor `receiveLeftClick` returns anything. A handler writes its result to fields (`hoverText`, `hoverItem`) that `draw()` reads later in the frame. A Harmony prefix returning `false` is therefore the way to block hover, and one on the StringBuilder `drawHoverText` suppresses every vanilla tooltip.
 - **`drawHoverText` can be re-issued at a fixed position.** Its `overrideX`/`overrideY` parameters (default `-1`, meaning "relative to the cursor") draw a pixel-identical vanilla tooltip, money line, buff icons and all, wherever they point. So the frozen tooltip is vanilla's own, re-drawn with the argument list `HoverTextPatches` recorded, rather than a hand-built copy.
