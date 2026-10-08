@@ -41,7 +41,7 @@ namespace ModLogic.Tests
         }
 
         /// <summary>What the game draws for a note: header, blank line, cleaned text, cut at 15 lines.</summary>
-        private static string NoteTooltip(string header, string note, string playerName = "Ben")
+        private static string NoteTooltip(string header, string note, string playerName = "Kiyo")
         {
             // paragraphs rejoined with the blank lines the game keeps between them (unwrapped: the
             // map is wrap-insensitive, and fewer lines only makes the 15-line cut less likely)
@@ -79,8 +79,8 @@ namespace ModLogic.Tests
         {
             string note = Load("data-ja", "SecretNotes")["22"];
 
-            Assert.True(Map().TryLookup(NoteTooltip(Load("ja", "Locations")["Secret_Note_Name"] + " #22", note, "Ben"), out string translation));
-            Assert.Contains("Ben", translation);
+            Assert.True(Map().TryLookup(NoteTooltip(Load("ja", "Locations")["Secret_Note_Name"] + " #22", note, "Kiyo"), out string translation));
+            Assert.Contains("Kiyo", translation);
             Assert.DoesNotContain("{0}", translation);
         }
 

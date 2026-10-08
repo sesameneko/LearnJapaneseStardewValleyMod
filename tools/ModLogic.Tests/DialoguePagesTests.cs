@@ -30,7 +30,7 @@ namespace ModLogic.Tests
 
         private static string NoGender(string text) => text;
 
-        private static string? Tokens(string name) => name == "@" ? "Ben" : null;
+        private static string? Tokens(string name) => name == "@" ? "Kiyo" : null;
 
         /// <summary>
         /// A stand-in for parseDialogueString on entries with no conditional commands: every text
@@ -125,7 +125,7 @@ namespace ModLogic.Tests
         [Fact]
         public void Cleans_markup_out_of_an_english_page()
         {
-            Assert.Equal("Hi Ben. Want this?", DialoguePages.Clean("Hi @. Want this?[395]$h", NoGender, Tokens));
+            Assert.Equal("Hi Kiyo. Want this?", DialoguePages.Clean("Hi @. Want this?[395]$h", NoGender, Tokens));
             Assert.Equal("Ugh...", DialoguePages.Clean("%Ugh...$s", NoGender, Tokens));
             Assert.Equal("I'll see you later.", DialoguePages.Clean("I'll see you later.%noturn", NoGender, Tokens));
             Assert.Equal("It's ... today.", DialoguePages.Clean("It's %adj today.$12", NoGender, Tokens));

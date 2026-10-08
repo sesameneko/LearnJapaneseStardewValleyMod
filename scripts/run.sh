@@ -8,7 +8,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-GAME_DIR="/Users/benjaminconnick/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS"
+GAME_DIR="${GAME_DIR:-$HOME/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS}"
 
 echo "==> Building mod..."
 dotnet build "$PROJECT_ROOT/LanguageStudyStardewValleyMod.csproj" "$@"

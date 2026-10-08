@@ -61,7 +61,7 @@ watch for others).
 Generate the worklist with this (writes a TSV of key, japanese, reading, gloss):
 
 ```bash
-cd /Users/benjaminconnick/Documents/Projects/LanguageStardewValleyMod
+cd <repo root>
 python3 - <<'PY' > /tmp/name-worklist.tsv
 import json
 d = json.load(open('tools/extracted-strings/literal-translations/Objects_Name.json'))

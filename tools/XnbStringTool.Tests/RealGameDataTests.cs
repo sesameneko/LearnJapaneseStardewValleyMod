@@ -13,8 +13,8 @@ namespace XnbStringTool.Tests;
 /// </summary>
 public class RealGameDataTests
 {
-    private const string StringsDir =
-        "/Users/benjaminconnick/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/Resources/Content/Strings";
+    private static readonly string StringsDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+        "Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/Resources/Content/Strings");
 
     private static void RequireGameInstalled()
     {
